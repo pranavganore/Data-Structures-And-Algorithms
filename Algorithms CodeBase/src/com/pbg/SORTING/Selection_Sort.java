@@ -1,12 +1,16 @@
 package com.pbg.SORTING;
 
-/* ----- Selection Sort Algorithm ----- */
+/* --------- 1.	Selection Sort --------- */
 
-/*
- *	Best Case		:	O( n(n-1)/2 )
- *	Average Case	:	( n(n-1)/2 )
- *	Worst Case		:	( n(n-1)/2 )
+//	A Brute Force Strategy
+
+/*		Asymptotic Time Complexity
+ * 
+ *	Best Case		:	𝚯( n )			| e.g. A sorted array
+ *	Average Case	:	𝚯( n^2 )		
+ *	Worst Case		:	𝚯( n^2 )		| e.g. A reverse sorted array
  */
+
 public class Selection_Sort {
 
 	public static void main(String[] args) {
