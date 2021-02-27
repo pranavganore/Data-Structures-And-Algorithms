@@ -18,7 +18,7 @@ public class Selection_Sort {
 	public static void main(String[] args) {
 		//	Define an input array
 		Integer[] input_Array = {7,2,5,3,9,6,8,1,4,10};
-		
+
 		//	Sort it using Selection Sort Algorithm
 		Integer[] sorted_Array = selection_Sort(input_Array);
 		
@@ -31,35 +31,44 @@ public class Selection_Sort {
 	
 	public static Integer[] selection_Sort(Integer[] int_Array){
 		//	Implement Selection Sort Algorithm
-		for(int i = 0; i<int_Array.length-1; i++) {		// Iterate over 0 to n
+		int swap_counter = 0;	//	Swap counter
+		for(int i = 0; i < int_Array.length-1 ; i++) {		// Iterate over 0 to n
 			System.out.println("Iteration " + (i+1));	// Diagnostic Prints - Iterations
 			
-			int min = int_Array[i];		//	Set a min value (also acts as a temp variable for swapping)
+			int min_idx = i;		//	Select the first index as minimum
 			int j = i+1;
 			while( j < int_Array.length) {
 
 				slowdown_forDiagnostics();	//	Slows down the runtime to view results
 				
-				if( int_Array[j] < min  ) {
-					
-					int_Array[i] = int_Array[j];	//	Swap the smaller value with
-					int_Array[j] = min;					//	the selected element
-					
-					min = int_Array[i];				//	Update the value of min
-
+				if( int_Array[j] < int_Array[min_idx]  ) {
+					min_idx = j;	//	Update the minimum_index	
 				} j++;
 				
 				//	Diagnostic Prints
 				System.out.println("Selected index : [" + i + "] Element : " + int_Array[i] 
 						+ " | Array : " + Arrays.toString(int_Array));
 			}
+			
+			//	Now swap the new minimum found with the selected i.e. i'th position
+			int temp = int_Array[i];
+			int_Array[i] = int_Array[min_idx];
+			int_Array[min_idx] = temp;
+			//	To optimize it more , 
+			//	we can check here if - min_idx and i are same and perform swap 
+			//	only if they are not equal
+			
+			System.out.println("Swapped!\n");	// Diagnostic Prints - Swapping
+			swap_counter++;
+			
 		}
+		System.out.println("\nTotal Swapps : " + swap_counter);	// Diagnostic Prints
 		return int_Array;
 	}
 
 	private static void slowdown_forDiagnostics() {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(300);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -90,3 +99,9 @@ public class Selection_Sort {
  *			Swap the min element with A[i]
  * 
  */
+
+/*
+ * 	Selection Sort using FOR while loop
+
+
+*/

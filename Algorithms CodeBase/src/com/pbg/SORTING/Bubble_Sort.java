@@ -18,6 +18,7 @@ public class Bubble_Sort {
 	public static void main(String[] args) {
 		//	Define an input array
 		Integer[] input_Array = {7,2,5,3,9,6,8,1,4,10};
+//		Integer[] input_Array = {10,9,8,7,6,5,4,3,2,1};
 		
 		//	Sort it using Selection Sort Algorithm
 		Integer[] sorted_Array = bubble_Sort(input_Array);
@@ -30,30 +31,36 @@ public class Bubble_Sort {
 	}
 
 	private static Integer[] bubble_Sort(Integer[] int_Array) {
-		
+		//	Implement Bubble Sort Algorithm
+		int swap_counter = 0;	//	Swap counter
 		for (int i = 0 ; i < int_Array.length ; i++) {	// Iterate over 0 to n
-			System.out.println("Iteration " + (i+1));	// Diagnostic Prints - Iterations
+			System.out.println("\nIteration " + (i+1));	// Diagnostic Prints - Iterations
 			
-			for (int j = i+1 ; j < int_Array.length ; j++) {	// Iterate over i+1 to n
+			for (int j = 0 ; j < int_Array.length-i-1 ; j++) {	// Iterate over i+1 to n
 				
 				slowdown_forDiagnostics();	//	Slows down the runtime to view results
 				
-				if(int_Array[j] < int_Array[i]) {	
-					int temp = int_Array[i];		// Swap logic
-					int_Array[i] = int_Array[j];
+				if(int_Array[j] > int_Array[j+1]) {	
+					int temp = int_Array[j+1];		// Swap logic
+					int_Array[j+1] = int_Array[j];
 					int_Array[j] = temp;
+					
+					System.out.println("Swapped!");	// Diagnostic Prints - Swapping
+					swap_counter++;
 				}
 				//	Diagnostic Prints
 				System.out.println("Selected index : [" + i + "] Element : " + int_Array[i] 
 						+ " | Array : " + Arrays.toString(int_Array));
 			}
 		}
+		System.out.println("\nTotal Swapps : " + swap_counter);	// Diagnostic Prints
+		
 		return int_Array;
 	}
 	
 	private static void slowdown_forDiagnostics() {
 		try {
-			Thread.sleep(500);
+			Thread.sleep(100);
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		}
@@ -64,15 +71,39 @@ public class Bubble_Sort {
 /*
  * 	Algorithm :: Bubble Sort
  * 
- *  Step 1 - Locate the smallest item and put it in the first place.
- * 	Step 2 - Then select the next smallest item and put it in the second place. And so on...
- * 	Step 3 - Sorting by repeated selection : "Selection Sort"
- * 	Step 4 - Final output ordering generated one by one in sequence.
+ *  Step 1 - 
+ * 	Step 2 - 
+ * 	Step 3 - 
+ * 	Step 4 - 
  * 
  */
 
 /*
  * 	Pseudocode :: Bubble Sort
  *  	
+ *  function BubbleSort(A) :
+ *  	for i in 0 to length(A) :
+ *  		for j in 0 down to length(A)-i-1 :
+ *  			if A[j] > A[j+1] : 
+ *  				swap (A[j] , A[j+1])
+ *  
+ *  	OR
+ *  
+ *  
+ *  function BubbleSort(A) :
+ *  	for i in 1 to length(A) :
+ *  		for j in length(A) down to i :
+ *  			if A[j-1] > A[j] : 
+ *  				swap (A[j-1], A[j])
  * 
+ */
+
+/**
+ * Note 1 : Jim Gray (Turing Awardee 1998)
+ * 
+ * 	Bubble sort is a good argument for analysing algorithm performance.
+ * 	It is a perfectly correct algorithm.
+ * 	But its performance is among the worst imaginable.
+ * 
+ * 	So it crisply shows the difference between correct algorithms and good algorithms.
  */
