@@ -5,6 +5,7 @@ import java.util.Arrays;
 /* --------- 2.	Bubble Sort --------- */
 
 //	A Brute Force Strategy
+//A Stable Sorting Algorithm if implemented properly (Stable means retains the previous sort order)
 
 /*		Asymptotic Time Complexity
  * 

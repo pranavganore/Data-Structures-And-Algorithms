@@ -5,6 +5,7 @@ import java.util.Arrays;
 /* --------- 3.	Insertion Sort  --------- */
 
 //	A Decrease & Conquer Strategy	(A problem is divided into single sub-problem)
+//A Stable Sorting Algorithm if implemented properly (Stable means retains the previous sort order)
 
 /*		Asymptotic Time Complexity
  * 

@@ -5,6 +5,8 @@ import java.util.Arrays;
 /* --------- 4.	Merge Sort --------- */
 
 //	A Divide & Conquer Strategy	(A problem is divided into multiple sub-problems)
+//	A Stable Sorting Algorithm if implemented properly (Stable means retains the previous sort order)
+//	NOT in place - thus require more space (A good compromise over running speed)
 
 /*		Asymptotic Time Complexity
  * 
@@ -198,5 +200,7 @@ public class Merge_Sort {
  * 
  * 		Tim Sort has been Python's standard sorting algorithm since V 2.3
  * 		And java also uses this algorithm to sort its objects.
+ * 
+ * 	-	Tim Sort is a Stable Algorithm //(Stable means retains the previous sort order)
  * 
  * */
