@@ -1,6 +1,6 @@
 package com.pbg.SORTING;
 
-/* --------- 5.	Quick Sort --------- */
+/* --------- 6.	Heap Sort --------- */
 
 //A Divide & Conquer Strategy	(A problem is divided into multiple sub-problems)
 //V IMP - Not stable but can be made 'in place' 

@@ -1,6 +1,6 @@
 package com.pbg.SORTING;
 
-/* --------- 7.	Radix Sort --------- */
+/* --------- 8.	Radix Sort --------- */
 
 
 public class Radix_Sort {

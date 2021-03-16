@@ -1,6 +1,6 @@
 package com.pbg.SORTING;
 
-/* --------- 6.	Counting Sort --------- */
+/* --------- 7.	Counting Sort --------- */
 
 public class Counting_Sort {
 
